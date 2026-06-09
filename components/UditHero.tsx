@@ -41,7 +41,7 @@ export default function UditHero() {
         </motion.div>
       </div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -53,7 +53,7 @@ export default function UditHero() {
           width={126}
           height={126}
         />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

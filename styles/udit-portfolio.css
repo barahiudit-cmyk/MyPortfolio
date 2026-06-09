@@ -1,7 +1,7 @@
 /* === Bottom Navbar === */
 .bottom-nav {
   position: fixed;
-  bottom: 20px; 
+  bottom: 20px;
   left: 20px;
   right: 20px;
   max-width: 500px;
@@ -58,9 +58,10 @@
   align-items: center;
   justify-content: center;
 }
+
 .theme-icon {
-    color: #ffffff;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+  color: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
   transition: all 0.3s ease;
 }
 
@@ -69,8 +70,8 @@
 }
 
 .sun-icon {
-   color: #facc15;
-  filter: drop-shadow(0 0 8px rgba(250,204,21,0.8));
+  color: #facc15;
+  filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.8));
   color: #facc15;
 }
 
@@ -131,19 +132,57 @@
   transform: translateY(-2px);
   border-color: var(--accent);
 }
+
 .udit-hero {
   padding: 64px 0 40px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  /* grid-template-columns: auto 1fr; 👈 swap */
   gap: 32px;
-  align-items: center;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+}
+
+.udit-hero-text {
+  text-align: right;
+  justify-self: end;
+  width: 488px;
+
+}
+
+/* background image layer */
+.udit-hero:before {
+  content: "";
+  opacity: .8;
+  /* filter: blur(1px); */
+  z-index: 0;
+  -webkit-mask-composite: source-in;
+  background: url(/images/pic2.png) 100% / auto 103% no-repeat;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 35%), linear-gradient(to left, #0000 0%, #000 35%);
+  mask-image: linear-gradient(to top, #0000 0%, #000 51%), linear-gradient(to left, #00000000 0%, #000 98%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 @media (max-width: 640px) {
   .udit-hero {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding-top: 40px;
+    padding: 40px 20px;
+    align-items: center;
+  }
+
+  .udit-hero-text {
+    width: 100%;
+
+  }
+
+  .udit-hero:before {
+    opacity: .6;
+    background-position: 30%;
+    background-size: auto 98%;
   }
 }
 
@@ -163,11 +202,12 @@
 }
 
 .udit-hero-text p {
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.5;
-  color: var(--text-muted);
+  color: var(--text);
   margin: 0;
-  max-width: 560px;
+  font-weight: 700;
+  /* max-width: 560px; */
 }
 
 .udit-avatar {
@@ -210,6 +250,7 @@
   margin: 0 0 24px;
   color: var(--text);
 }
+
 /* === Stats === */
 
 .udit-stats-grid {
@@ -229,12 +270,12 @@
 }
 
 .udit-stat-card:hover {
- border-color: var(--text-soft);
+  border-color: var(--text-soft);
   background: var(--bg-soft);
 }
 
 .udit-stat-value {
- margin: 10px;
+  margin: 10px;
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
@@ -252,6 +293,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 /* ===== ABOUT ===== */
 .udit-about p {
   font-size: 17px;
@@ -716,20 +758,22 @@
 .cs-cta-card {
   position: relative;
   width: 100%;
-  background: var(--bg-card); /* Dark semi-transparent background */
+  background: var(--bg-card);
+  /* Dark semi-transparent background */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(124, 124, 124, 0.745);
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px #0000002e;
   overflow: hidden;
 }
 
 /* Content Container Inside Card */
 .cs-cta-content {
   position: relative;
-  z-index: 2; /* Content elements neon glow ke upar dikhne chahiye */
+  z-index: 2;
+  /* Content elements neon glow ke upar dikhne chahiye */
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -743,6 +787,7 @@
     align-items: center;
     gap: 48px;
   }
+
   .cs-cta-text-side {
     flex: 1;
   }
@@ -754,7 +799,8 @@
   align-items: center;
   gap: 8px;
   background: rgba(34, 197, 94, 0.1);
-  color: #4ade80; /* Radiant lime-green text */
+  color: #4ade80;
+  /* Radiant lime-green text */
   font-size: 13px;
   font-weight: 600;
   padding: 6px 14px;
@@ -777,9 +823,20 @@
 }
 
 @keyframes pulseGlow {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(99, 34, 197, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
 }
 
 /* Headings & Text Design */
@@ -810,16 +867,17 @@
   min-width: max-content;
 }
 
-@media(max-width:658px){
-  /* Actions Side Buttons Wrap */
-.cs-cta-actions {
-  display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  gap: 16px;
+@media(max-width:658px) {
 
-  min-width: max-content;
-}
+  /* Actions Side Buttons Wrap */
+  .cs-cta-actions {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 16px;
+
+    min-width: max-content;
+  }
 }
 
 /* Custom Clean Button Engine */
@@ -839,14 +897,14 @@
 
 /* Primary Button (Solid Gradient Highlight) */
 .cs-btn-primary {
-  background: linear-gradient(135deg, var(--accent-2) 0%, #1d4ed8 100%);
-  color: var(--text);
-  box-shadow: 0 2px 7px rgba(59, 130, 246, 0.4);
+  background: rgba(81, 0, 128, 0.516);
+  color: white;
+  /* box-shadow: 0 2px 7px rgba(59, 130, 246, 0.4); */
 }
 
 .cs-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+  /* box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6); */
   filter: brightness(1.1);
 }
 
@@ -864,7 +922,8 @@
 }
 
 /* Ambient Background Glow Effect Layers */
-.cs-cta-glow-1, .cs-cta-glow-2 {
+.cs-cta-glow-1,
+.cs-cta-glow-2 {
   position: absolute;
   width: 250px;
   height: 250px;
@@ -878,11 +937,13 @@
 .cs-cta-glow-1 {
   top: -100px;
   left: -50px;
-  background: #3b82f6; /* Blue glow left top corner */
+  background: #f1f1f1;
+  /* Blue glow left top corner */
 }
 
 .cs-cta-glow-2 {
   bottom: -100px;
   right: -50px;
-  background: #10b981; /* Emerald green glow right bottom */
+  background: #6a10b9;
+  /* Emerald green glow right bottom */
 }

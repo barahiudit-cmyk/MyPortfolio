@@ -47,6 +47,7 @@ export default function App() {
       />
       <UditSkills />
       <UditProjects />
+      
       <UditHackathons />
       <ContactCTA />
       <footer className="udit-footer " style={{ marginBottom: '60px' }}>

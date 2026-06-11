@@ -34,9 +34,14 @@ export type Project = {
   description: string;
   tags: string[];
   badges: { label: string; icon?: string }[];
-  thumbClass?: string;          // Optional bana diya
-  thumbContent?: React.ReactNode; // Optional bana diya
-  image?: string;                // Naya image option added
+  image?: string;
+};
+
+export type CreativeProject = {
+  title: string;
+  badges: { label: string; icon?: string }[];
+
+  image: string;
 };
 
 export type Hackathon = {
@@ -100,28 +105,28 @@ export const experiences: Experience[] = [
 ];
 
 export const education: Education[] = [
-  { 
-    school: 'GIET UNIVERSITY', 
-    degree: 'Bachelor of Computer Applications (CGPA: 7.43)', 
-    period: '2022 – 2025', 
+  {
+    school: 'GIET UNIVERSITY',
+    degree: 'Bachelor of Computer Applications (CGPA: 7.43)',
+    period: '2022 – 2025',
     color: '#1e3a8a', // Deep Blue for University
-    initial: 'GIET' 
+    initial: 'GIET'
   },
-  { 
-    school: 'SHRI CHANDRA HIGHER SECONDARY SCHOOL', 
-    degree: 'Higher Secondary (Commerce) - 74%', 
-    period: '2020 – 2022', 
+  {
+    school: 'SHRI CHANDRA HIGHER SECONDARY SCHOOL',
+    degree: 'Higher Secondary (Commerce) - 74%',
+    period: '2020 – 2022',
     color: '#7c3aed', // Purple for High School
-    initial: 'SC' 
+    initial: 'SC'
   },
-  { 
-    school: 'EVERGREEN ACADEMY', 
-    degree: '10th Standard (83%)', 
-    period: '2020', 
+  {
+    school: 'EVERGREEN ACADEMY',
+    degree: '10th Standard (83%)',
+    period: '2020',
     color: '#059669', // Green for Academy
-    initial: 'EA' 
+    initial: 'EA'
   },
-  
+
 ];
 export const skills: Skill[] = [
   // Frontend
@@ -151,119 +156,71 @@ export const skills: Skill[] = [
   { name: 'Graphics Design', color: '#ff61f6', initial: '🎨' },
 ];
 
-export const projects: Project[] = [
+// 
+export const webProjects: Project[] = [
   {
     title: 'Enterprise Admin Dashboard',
     period: 'AMD Soft and Services · Web Developer',
     description:
-      'Developed a responsive admin dashboard for monitoring business operations, analytics, user activities, and reporting. Implemented data visualization components and optimized the interface for desktop and mobile devices.',
-    tags: [
-      'React',
-      'JavaScript',
-      'TailwindCSS',
-      'Chart.js',
-      'Responsive Design'
-    ],
-    badges: [
-      { label: 'Production Project', icon: '🚀' }
-    ],
+      'Developed a responsive admin dashboard for monitoring business operations, analytics, user activities, and reporting.',
+    tags: ['Laravel','HTML ','CSS', 'JavaScript', 'TailwindCSS', 'Chart.js'],
+    badges: [{ label: 'Production Project', icon: '🚀' }],
   },
 
   {
     title: 'Poultry Farm Management System',
     period: 'AMD Soft and Services · Frontend Development',
     description:
-      'Built user-friendly interfaces for managing poultry records, production tracking, inventory management, and operational reporting. Focused on usability and responsive design.',
-    tags: [
-      'HTML',
-      'CSS',
-      'Bootstrap',
-      'JavaScript'
-    ],
-    badges: [
-      { label: 'Management System', icon: '📊' }
-    ],
+      'Built interfaces for poultry records, inventory tracking, production management and reporting.',
+    tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    badges: [{ label: 'Management System', icon: '📊' }],
   },
 
   {
     title: 'E-Learning Platform',
     period: 'AMD Soft and Services · Frontend Development',
     description:
-      'Developed responsive course listings, student dashboards, and learning interfaces for an online education platform, ensuring accessibility across devices.',
-    tags: [
-      'Bootstrap',
-      'JavaScript',
-      'Responsive Design'
-    ],
-    badges: [
-      { label: 'Education Platform', icon: '🎓' }
-    ],
+      'Developed responsive learning interfaces, student dashboards and course management views.',
+    tags: ['Bootstrap','HTML ','CSS', 'JavaScript', 'Responsive Design'],
+    badges: [{ label: 'Education Platform', icon: '🎓' }],
   },
 
   {
     title: 'Book Publication System',
     period: 'AMD Soft and Services · Frontend Development',
     description:
-      'Created interfaces for book catalog management, author workflows, publication tracking, and digital content presentation with a clean reading experience.',
-    tags: [
-      'HTML',
-      'CSS',
-      'Bootstrap',
-      'JavaScript'
-    ],
-    badges: [
-      { label: 'Publishing System', icon: '📚' }
-    ],
+      'Created book catalog management and publication workflow interfaces.',
+    tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    badges: [{ label: 'Publishing System', icon: '📚' }],
   },
 
   {
     title: 'Assaman Nepal NGO Portal',
     period: 'AMD Soft and Services · Frontend Development',
     description:
-      'Developed a responsive NGO portal to showcase programs, community initiatives, donation activities, and organizational impact reports.',
-    tags: [
-      'HTML',
-      'CSS',
-      'Bootstrap',
-      'JavaScript',
-      'Responsive Design'
-    ],
-    badges: [
-      { label: 'NGO Platform', icon: '🤝' }
-    ],
+      'Developed a responsive NGO portal showcasing programs, donations and impact reports.',
+    tags: ['Bootstrap', 'HTML ','CSS','JavaScript', 'Responsive Design'],
+    badges: [{ label: 'NGO Platform', icon: '🤝' }],
   },
 
   {
     title: 'Cooperative Management App',
     period: 'AMD Soft and Services · Frontend Development',
     description:
-      'Designed and implemented interfaces for member management, transaction records, financial summaries, and cooperative administration workflows.',
-    tags: [
-      'TailwindCSS',
-      'JavaScript',
-      'Data Tables',
-      'Responsive Design'
-    ],
-    badges: [
-      { label: 'Finance Platform', icon: '💰' }
-    ],
+      'Designed interfaces for member management, transactions and financial operations.',
+    tags: ['HTML ','CSS','Bootstrap', 'JavaScript', 'Data Tables'],
+    badges: [{ label: 'Finance Platform', icon: '💰' }],
   },
 
   {
     title: 'Clean Profession',
     period: 'Personal Project · Full Stack Development',
     description:
-      'Built a full-stack web application focused on cleanliness awareness. Developed secure backend functionality, database integration, responsive user interfaces, and deployed the application for public access.',
-    tags: [
-      'PHP',
-      'Laravel',
-      'MySQL',
-      'JavaScript',
-      'Full Stack'
-    ],
+      'Built a full-stack application using Laravel, MySQL and JavaScript.',
+    tags: [ 'PHP', 'MySQL', 'HTML ','CSS','JavaScript'],
     badges: [
       { label: 'Full Stack', icon: '⚡' },
-      { label: 'College Project', icon: '🎯' }
+      { label: 'College Project', icon: '🎯' },
     ],
   },
 
@@ -271,21 +228,39 @@ export const projects: Project[] = [
     title: 'Real-Base',
     period: 'Cloud First Hackathon · 3rd Place Winner',
     description:
-      'Contributed to the development of a cloud-based solution during the Cloud First Hackathon. Collaborated with team members to build and present a working prototype that secured 3rd place.',
-    tags: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Python',
-      'Cloud'
-    ],
+      'Built a cloud-based solution prototype that secured 3rd place in the hackathon.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Python','AWS', 'Git / Github'],
     badges: [
       { label: '3rd Place', icon: '🏆' },
-      { label: 'Hackathon Project', icon: '🚀' }
+      { label: 'Hackathon', icon: '🚀' },
     ],
   },
 ];
 
+
+
+export const creativeProjects: CreativeProject[] = [
+  {
+    title: "Poster Design 01",
+    image: "/images/graphic1.png",
+    badges: [{ label: 'Poster Design', icon: '🚀' }],
+
+  },
+  {
+    title: "Social Media Banner",
+    image: "/images/graphic2.png",
+    badges: [{ label: 'About Me', icon: '🚀' }],
+
+  },
+  {
+    title: "Branding Design",
+    image: "/images/graphic3.png",
+    badges: [{ label: 'Degital Marketing', icon: '🚀' }],
+
+  },
+];
+
+// 
 export const hackathons: Hackathon[] = [
   {
     date: 'March 2024',

@@ -258,6 +258,7 @@ export const creativeProjects: CreativeProject[] = [
     badges: [{ label: 'Degital Marketing', icon: '🚀' }],
 
   },
+  
 ];
 
 // 

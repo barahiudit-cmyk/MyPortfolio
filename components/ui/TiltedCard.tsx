@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useDragScroll } from '@/lib/hooks/useDragScroll';
 
 export interface TiltedCarouselItem {
   title: string;
@@ -21,65 +22,17 @@ export default function TiltedCarousel({
   autoScroll = false,
   speed = 1,
 }: TiltedCarouselProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  // Auto-scroll loop
-  useEffect(() => {
-    if (!autoScroll || !scrollRef.current) return;
-    const el = scrollRef.current;
-    let raf: number;
-
-    const scroll = () => {
-      if (!isDragging && el) {
-        el.scrollLeft += speed;
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
-          el.scrollLeft = 0;
-        }
-      }
-      raf = requestAnimationFrame(scroll);
-    };
-    raf = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(raf);
-  }, [autoScroll, isDragging, speed]);
-
-  // Drag-to-scroll handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-  const handleMouseLeave = () => setIsDragging(false);
-  const handleMouseUp = () => setIsDragging(false);
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Wheel: vertical scroll → horizontal
-  const handleWheel = (e: React.WheelEvent) => {
-    if (!scrollRef.current) return;
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      scrollRef.current.scrollLeft += e.deltaY;
-    }
-  };
+  const { scrollRef, isDragging, handlers } = useDragScroll({
+    autoScroll,
+    speed,
+  });
 
   return (
     <div className="udit-tilted-carousel-wrapper">
       <div
         ref={scrollRef}
         className={`udit-tilted-carousel-track ${isDragging ? 'dragging' : ''}`}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onWheel={handleWheel}
+        {...handlers}
       >
         {items.map((item, i) => (
           <motion.div

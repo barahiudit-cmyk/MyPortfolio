@@ -976,7 +976,7 @@
 
 @media (max-width: 768px) {
   .udit-project-tabs {
-    justify-content: flex-start;
+    justify-content: center;
 
     width: 100%;
 

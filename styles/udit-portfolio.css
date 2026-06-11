@@ -1147,8 +1147,8 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .udit-tilted-card {
-        width: 200px;
-        height: 250px;
+            width: 225px;
+        height: 282px;
   }
   .udit-tilted-carousel-track {
     padding: 30px 30px;

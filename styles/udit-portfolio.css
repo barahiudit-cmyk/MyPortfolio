@@ -144,8 +144,8 @@
 }
 
 .udit-hero-text {
-  text-align: right;
-  justify-self: end;
+  text-align: left;
+  justify-self: start;
   width: 488px;
 
 }
@@ -157,11 +157,15 @@
   /* filter: blur(1px); */
   z-index: 0;
   -webkit-mask-composite: source-in;
-  background: url(/images/pic2.png) 100% / auto 103% no-repeat;
+  background: url(/images/banner.png) 100% / auto 103% no-repeat;
   position: absolute;
   inset: 0;
+  /* this mask for left img  */
   -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 35%), linear-gradient(to left, #0000 0%, #000 35%);
-  mask-image: linear-gradient(to top, #0000 0%, #000 51%), linear-gradient(to left, #00000000 0%, #000 98%);
+  /* mask-image: linear-gradient(to top, #0000 0%, #000 51%), linear-gradient(to left, #00000000 0%, #000 98%); */
+
+  /* this mask for right img */
+  mask-image: linear-gradient(to top, #0000 0%, #000 23%), linear-gradient(to right, #0000 0%, #000 98%);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
@@ -179,9 +183,18 @@
 
   }
 
-  .udit-hero:before {
+  /* this is for the left img */
+
+  /* .udit-hero:before {
     opacity: .6;
     background-position: 30%;
+    background-size: auto 98%;
+  } */
+
+  /* this is for right img */
+  .udit-hero:before {
+    opacity: .6;
+    background-position: 70%;
     background-size: auto 98%;
   }
 }
@@ -449,7 +462,7 @@
 .udit-projects-header {
   text-align: center;
   padding: 24px 0 32px;
-    border-top: 1px solid var(--border-soft);
+  border-top: 1px solid var(--border-soft);
 }
 
 .udit-projects-header h2 {

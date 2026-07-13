@@ -1,5 +1,5 @@
 'use client';
-import { useDragScroll } from '@/hooks/useDragScroll';
+import { useDragScroll } from '@/lib/hooks/useDragScroll';
 
 export default function LogoStrip() {
   const { scrollRef, isDragging, handlers } = useDragScroll({ autoScroll: true, speed: 0.5 });

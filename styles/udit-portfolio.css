@@ -155,9 +155,10 @@
   content: "";
   opacity: .8;
   /* filter: blur(1px); */
-  z-index: 0;
+ 
+  z-index: 1;
   -webkit-mask-composite: source-in;
-  background: url(/images/banner.png) 100% / auto 103% no-repeat;
+  background: url(/images/banner.png) 100% / auto 102% no-repeat;
   position: absolute;
   inset: 0;
   /* this mask for left img  */

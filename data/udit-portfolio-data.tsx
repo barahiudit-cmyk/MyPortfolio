@@ -35,6 +35,7 @@ export type Project = {
   tags: string[];
   badges: { label: string; icon?: string }[];
   image?: string;
+  link: string;
 };
 
 export type CreativeProject = {
@@ -163,8 +164,9 @@ export const webProjects: Project[] = [
     period: 'AMD Soft and Services · Web Developer',
     description:
       'Developed a responsive admin dashboard for monitoring business operations, analytics, user activities, and reporting.',
-    tags: ['Laravel','HTML ','CSS', 'JavaScript', 'TailwindCSS', 'Chart.js'],
+    tags: ['Laravel', 'HTML ', 'CSS', 'JavaScript', 'TailwindCSS', 'Chart.js'],
     badges: [{ label: 'Production Project', icon: '🚀' }],
+    link: '#'
   },
 
   {
@@ -174,6 +176,7 @@ export const webProjects: Project[] = [
       'Built interfaces for poultry records, inventory tracking, production management and reporting.',
     tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
     badges: [{ label: 'Management System', icon: '📊' }],
+    link: '#'
   },
 
   {
@@ -181,8 +184,9 @@ export const webProjects: Project[] = [
     period: 'AMD Soft and Services · Frontend Development',
     description:
       'Developed responsive learning interfaces, student dashboards and course management views.',
-    tags: ['Bootstrap','HTML ','CSS', 'JavaScript', 'Responsive Design'],
+    tags: ['Bootstrap', 'HTML ', 'CSS', 'JavaScript', 'Responsive Design'],
     badges: [{ label: 'Education Platform', icon: '🎓' }],
+    link: '#'
   },
 
   {
@@ -192,6 +196,7 @@ export const webProjects: Project[] = [
       'Created book catalog management and publication workflow interfaces.',
     tags: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
     badges: [{ label: 'Publishing System', icon: '📚' }],
+    link: '#'
   },
 
   {
@@ -199,8 +204,9 @@ export const webProjects: Project[] = [
     period: 'AMD Soft and Services · Frontend Development',
     description:
       'Developed a responsive NGO portal showcasing programs, donations and impact reports.',
-    tags: ['Bootstrap', 'HTML ','CSS','JavaScript', 'Responsive Design'],
+    tags: ['Bootstrap', 'HTML ', 'CSS', 'JavaScript', 'Responsive Design'],
     badges: [{ label: 'NGO Platform', icon: '🤝' }],
+    link: '#'
   },
 
   {
@@ -208,8 +214,9 @@ export const webProjects: Project[] = [
     period: 'AMD Soft and Services · Frontend Development',
     description:
       'Designed interfaces for member management, transactions and financial operations.',
-    tags: ['HTML ','CSS','Bootstrap', 'JavaScript', 'Data Tables'],
+    tags: ['HTML ', 'CSS', 'Bootstrap', 'JavaScript', 'Data Tables'],
     badges: [{ label: 'Finance Platform', icon: '💰' }],
+    link: '#'
   },
 
   {
@@ -217,11 +224,13 @@ export const webProjects: Project[] = [
     period: 'Personal Project · Full Stack Development',
     description:
       'Built a full-stack application using Laravel, MySQL and JavaScript.',
-    tags: [ 'PHP', 'MySQL', 'HTML ','CSS','JavaScript'],
+    tags: ['PHP', 'MySQL', 'HTML ', 'CSS', 'JavaScript'],
     badges: [
       { label: 'Full Stack', icon: '⚡' },
       { label: 'College Project', icon: '🎯' },
+
     ],
+    link: '#'
   },
 
   {
@@ -229,11 +238,12 @@ export const webProjects: Project[] = [
     period: 'Cloud First Hackathon · 3rd Place Winner',
     description:
       'Built a cloud-based solution prototype that secured 3rd place in the hackathon.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Python','AWS', 'Git / Github'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'Python', 'AWS', 'Git / Github'],
     badges: [
       { label: '3rd Place', icon: '🏆' },
       { label: 'Hackathon', icon: '🚀' },
     ],
+    link: '#'
   },
 ];
 
@@ -258,7 +268,7 @@ export const creativeProjects: CreativeProject[] = [
     badges: [{ label: 'Degital Marketing', icon: '🚀' }],
 
   },
-  
+
 ];
 
 // 
